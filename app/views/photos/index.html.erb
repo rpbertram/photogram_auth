@@ -18,12 +18,15 @@
       <% @photos.each do |photo| %>
       <tr>
         <td><%= photo.caption %></td>
-        <td><%= photo.image %></td>
+        <td><img src="<%= photo.image %>" width=400></td>
         <td><%= photo.user_id %></td>
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>
+          <% if current_user.id == photo.user_id%>
           <a href="/photos/<%= photo.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_photo/<%= photo.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% else %>
+          <% end %>
         </td>
       </tr>
       <% end %>

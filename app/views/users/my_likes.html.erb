@@ -6,15 +6,17 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Caption</th>
         <th>Image</th>
+        <th>Caption</th>
+        <th>User</th>
       </tr>
 
 
       <% @user.liked_photos.each do |liked_photo| %>
       <tr>
+        <td><img src="<%= liked_photo.image %>" width=400></td>
         <td><%= liked_photo.caption %></td>
-        <td><%= liked_photo.image %></td>
+        <td><%= liked_photo.user.username %></td>
       </tr>
       <% end %>
     </table>
