@@ -43,6 +43,13 @@
           <li><a href="/comments">Comments</a></li>
           <li><a href="/likes">Likes</a></li>
           <li><a href="/photos">Photos</a></li>
+
+          <li><a href="/users">All Users</a></li>
+          <% if user_signed_in? %>
+          <li><a href="/my_likes">My Likes</a></li>
+          <li><a href="/users/<%= current_user.id %>">My Wall</a></li>
+          <% else %>
+          <% end %>
           <!-- <li><a href="/rails/info">Sitemap</a></li> -->
         </ul>
 
